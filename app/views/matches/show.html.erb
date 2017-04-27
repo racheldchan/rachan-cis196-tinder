@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= User.find(@match.receiver_id).name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= User.find(@match.receiver_id).age %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= User.find(@match.receiver_id).desc %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag User.find(@match.receiver_id).image.url %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= User.find(@match.receiver_id).email %>
+</p>
+
+<%= link_to 'Back', user_matches_path %>

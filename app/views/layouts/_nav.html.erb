@@ -1,0 +1,18 @@
+<nav class="nav-banner">
+
+  <!-- Add link to user's show page and log out button if logged in -->
+  <!-- Add log out link otherwise -->
+  <% if logged_in? %>
+    <a class="nav-btn" href="/">Swipe</a>
+    <a class="nav-btn" href="/users/<%=current_user.id%>/matches">Matches</a>
+    <%= link_to current_user.name, current_user %>
+    <%= link_to 'Log out', logout_path, method: :delete %>
+  <% else %>
+    <h1>Welcome to Tinder!</h1>
+    <%= link_to 'Log in', login_path, method: :post %>
+    <%= link_to 'Sign up', new_user_url %>
+  <% end %>
+
+  <span class="nav-sessions">
+  </span>
+</nav>

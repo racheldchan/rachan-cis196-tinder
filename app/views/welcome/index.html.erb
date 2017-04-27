@@ -1,0 +1,26 @@
+<% if logged_in? %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @current_profile.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @current_profile.image.url %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @current_profile.age %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @current_profile.desc %>
+</p>
+
+<%= link_to 'Swipe Left' %>
+<%= link_to 'Swipe Right', "/users/#{@current_profile.id}/matches", method: :post %>
+<% end %>
